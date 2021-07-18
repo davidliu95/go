@@ -1,0 +1,170 @@
+----------------------------------------------10字节----------------------------------------------
+E:\redis\Redis-x64-5.0.10>redis-benchmark -h 127.0.0.1 -p 6379 -t set,get -d 10 -q
+====== SET ======
+  100000 requests completed in 0.98 seconds
+  50 parallel clients
+  10 bytes payload
+  keep alive: 1
+
+99.93% <= 1 milliseconds
+100.00% <= 1 milliseconds
+101626.02 requests per second
+
+====== GET ======
+  100000 requests completed in 0.94 seconds
+  50 parallel clients
+  10 bytes payload
+  keep alive: 1
+
+99.94% <= 1 milliseconds
+99.95% <= 20 milliseconds
+99.96% <= 21 milliseconds
+99.97% <= 22 milliseconds
+99.98% <= 23 milliseconds
+99.98% <= 24 milliseconds
+99.99% <= 25 milliseconds
+99.99% <= 26 milliseconds
+100.00% <= 27 milliseconds
+100.00% <= 27 milliseconds
+106269.93 requests per second
+
+----------------------------------------------20字节----------------------------------------------
+E:\redis\Redis-x64-5.0.10>redis-benchmark -h 127.0.0.1 -p 6379 -t set,get -d 20 -q
+====== SET ======
+  100000 requests completed in 0.96 seconds
+  50 parallel clients
+  20 bytes payload
+  keep alive: 1
+
+100.00% <= 1 milliseconds
+100.00% <= 1 milliseconds
+104384.13 requests per second
+
+====== GET ======
+  100000 requests completed in 0.92 seconds
+  50 parallel clients
+  20 bytes payload
+  keep alive: 1
+
+99.92% <= 1 milliseconds
+100.00% <= 1 milliseconds
+108932.46 requests per second
+
+----------------------------------------------50字节----------------------------------------------
+E:\redis\Redis-x64-5.0.10>redis-benchmark -h 127.0.0.1 -p 6379 -t set,get -d 50 -q
+====== SET ======
+  100000 requests completed in 0.99 seconds
+  50 parallel clients
+  50 bytes payload
+  keep alive: 1
+
+99.80% <= 1 milliseconds
+100.00% <= 1 milliseconds
+101214.58 requests per second
+
+====== GET ======
+  100000 requests completed in 0.90 seconds
+  50 parallel clients
+  50 bytes payload
+  keep alive: 1
+
+100.00% <= 0 milliseconds
+110619.47 requests per second
+
+----------------------------------------------100字节----------------------------------------------
+E:\redis\Redis-x64-5.0.10>redis-benchmark -h 127.0.0.1 -p 6379 -t set,get -d 100 -q
+====== SET ======
+  100000 requests completed in 1.11 seconds
+  50 parallel clients
+  100 bytes payload
+  keep alive: 1
+
+99.99% <= 1 milliseconds
+100.00% <= 1 milliseconds
+90415.91 requests per second
+
+====== GET ======
+  100000 requests completed in 1.02 seconds
+  50 parallel clients
+  100 bytes payload
+  keep alive: 1
+
+99.79% <= 1 milliseconds
+100.00% <= 1 milliseconds
+98328.42 requests per second
+
+----------------------------------------------200字节----------------------------------------------
+E:\redis\Redis-x64-5.0.10>redis-benchmark -h 127.0.0.1 -p 6379 -t set,get -d 200 -q
+====== SET ======
+  100000 requests completed in 1.03 seconds
+  50 parallel clients
+  200 bytes payload
+  keep alive: 1
+
+99.86% <= 1 milliseconds
+100.00% <= 1 milliseconds
+97370.98 requests per second
+
+====== GET ======
+  100000 requests completed in 0.95 seconds
+  50 parallel clients
+  200 bytes payload
+  keep alive: 1
+
+99.88% <= 1 milliseconds
+99.95% <= 8 milliseconds
+99.97% <= 9 milliseconds
+100.00% <= 9 milliseconds
+105374.08 requests per second
+
+----------------------------------------------1000字节----------------------------------------------
+E:\redis\Redis-x64-5.0.10>redis-benchmark -h 127.0.0.1 -p 6379 -t set,get -d 1000 -q
+====== SET ======
+  100000 requests completed in 1.02 seconds
+  50 parallel clients
+  1000 bytes payload
+  keep alive: 1
+
+99.79% <= 1 milliseconds
+100.00% <= 1 milliseconds
+97751.71 requests per second
+
+====== GET ======
+  100000 requests completed in 0.94 seconds
+  50 parallel clients
+  1000 bytes payload
+  keep alive: 1
+
+99.91% <= 1 milliseconds
+100.00% <= 1 milliseconds
+106723.59 requests per second
+
+----------------------------------------------5000字节----------------------------------------------
+E:\redis\Redis-x64-5.0.10>redis-benchmark -h 127.0.0.1 -p 6379 -t set,get -d 5000
+====== SET ======
+  100000 requests completed in 1.12 seconds
+  50 parallel clients
+  5000 bytes payload
+  keep alive: 1
+
+99.82% <= 1 milliseconds
+100.00% <= 1 milliseconds
+89206.06 requests per second
+
+====== GET ======
+  100000 requests completed in 1.12 seconds
+  50 parallel clients
+  5000 bytes payload
+  keep alive: 1
+
+99.54% <= 1 milliseconds
+99.95% <= 27 milliseconds
+99.96% <= 28 milliseconds
+99.97% <= 29 milliseconds
+99.98% <= 30 milliseconds
+99.98% <= 31 milliseconds
+99.99% <= 32 milliseconds
+99.99% <= 33 milliseconds
+100.00% <= 34 milliseconds
+100.00% <= 34 milliseconds
+89445.44 requests per second
