@@ -1,0 +1,21 @@
+fix length:固定长度
+    寻找消息边界的方式：消息统一满足固定长度，不足补零或者其他
+    优点：简单
+    缺点：浪费空间
+
+delimiter based:基于分隔符
+    寻找消息边界的方式：消息统一满足固定长度，不足补零或者其他
+    优点：空间不浪费，也比较简单
+    缺点：内容本身出现分隔符需要转义，需要扫描全部内容
+
+length field based frame decoder:基于长度字段的帧解码器
+    寻找消息边界的方式：先解析固定长度的字段获取长度，然后读取后续内容
+    优点：精确定位数据，内容不用转义
+    缺点：长度理论上有限制，需提前预支可能的最大长度，从而定义长度占用字节
+1. maxFrameLength - 发送的数据帧最大长度
+2. lengthFieldOffset - 定义长度域位于发送的字节数组中的下标。换句话说：发送的字节数组中下标为${lengthFieldOffset}的地方是长度域的开始地方
+3. lengthFieldLength - 用于描述定义的长度域的长度。换句话说：发送字节数组bytes时, 字节数组bytes[lengthFieldOffset, lengthFieldOffset+lengthFieldLength]域对应于的定义长度域部分
+4. lengthAdjustment - 满足公式: 发送的字节数组bytes.length - lengthFieldLength = bytes[lengthFieldOffset, lengthFieldOffset+lengthFieldLength] + lengthFieldOffset + lengthAdjustment
+5. initialBytesToStrip - 接收到的发送数据包，去除前initialBytesToStrip位
+6. failFast - true: 读取到长度域超过maxFrameLength，就抛出一个 TooLongFrameException。false: 只有真正读取完长度域的值表示的字节之后，才会抛出 TooLongFrameException，默认情况下设置为true，建议不要修改，否则可能会造成内存溢出
+7. ByteOrder - 数据存储采用大端模式或小端模式
